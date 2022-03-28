@@ -1,0 +1,458 @@
+html {
+    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body {
+    width: 99%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-areas: "head head head head head"
+                        "head1 head1 head1 head1 head1"
+                         "cont1 cont1 cont1 side1 side1"
+                         "cont1 cont1 cont1 side1 side1"
+                         "cont1 cont1 cont1 side2 side2"
+                         "cont2 cont2 cont2 side2 side2"
+                         "cont2 cont2 cont2 side3 side3"
+                         "cont2 cont2 cont2 side3 side3"
+                         "reg reg reg reg reg"
+                         "reg reg reg reg reg"
+                         "foot foot foot foot foot";
+    gap: 0.5rem;
+    overflow-x: hidden;
+    margin:auto
+}
+
+/*header*/
+
+header {
+    grid-area: head;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 1rem;
+}
+
+.container-main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo {
+    width: 9rem;
+    height: auto;
+}
+
+.logo-text {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: darkorange;
+    display: inline-block;
+    padding-left: 1rem;
+    padding-right:1rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 1rem;
+    position: relative;
+}
+
+.desktop ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 1px;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: darkorange;
+    transition: 0.5s ease-out;
+}
+
+.desktop ul li:hover::before {
+   width: 100%;
+}
+
+li a {
+    font-family: 'Montserrat', sans-serif;
+   text-decoration: none; 
+}
+
+/*grid areas*/
+
+.after-header {
+    grid-area: head1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont1 {
+    grid-area: cont1;
+}
+
+.cont2 {
+    grid-area: cont2;
+}
+
+.side1 {
+    grid-area: side1;
+}
+
+.side2 {
+    grid-area: side2;
+}
+
+.side3 {
+    grid-area: side3;
+}
+
+.reg {
+    grid-area: reg;
+}
+
+footer {
+    grid-area: foot;
+}
+
+/*after header*/
+
+.after-header h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: rgb(37, 81, 148);
+    padding-bottom: 1rem;
+}
+
+/*content 1*/
+
+#cont1-main {
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+}
+
+.cont1 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.cont1-text h2 {
+    background-color: rgba(224, 141, 32, 0.7);
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    padding-top: 1rem;
+    margin-top: 0.1rem;
+}
+
+h2 {
+    padding-bottom: 1rem;
+}
+
+h2:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgba(25, 146, 226, 0.7);
+    padding-left: 1rem;
+    transition-duration: 1s;
+}
+
+/*content 2*/
+
+#cont2 {
+    display: flex;
+}
+
+#cont2-main {
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+}
+
+.cont2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.cont2-text h2 {
+    background-color: rgba(224, 141, 32, 0.7);
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    padding-top: 1rem;
+    margin-top: 0.1rem;
+}
+
+h2:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgba(25, 146, 226, 0.7);
+    padding-left: 1rem;
+    transition-duration: 1s;
+}
+
+/*sidebar 1*/
+
+#side1-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side1 img {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.side1-text h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+    color: rgba(25, 146, 226, 0.7);
+    border-top: 4px solid orange;
+    border-bottom: 4px solid orange;
+    padding: 1rem 0;
+    margin: 0 1.5rem;
+}
+
+.side1-text h3:hover {
+    cursor: grab;
+    color: white;
+    background-color: rgba(25, 146, 226, 0.7); 
+    border-top: 0.4rem solid rgba(25, 146, 226, 0.7);
+    border-bottom: 0.4rem solid rgba(25, 146, 226, 0.7);
+    transition: 1s;
+}
+
+/*sidebar 2*/
+
+#side2-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side2 img {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.side2-text h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+    padding: 0 1rem;
+    color: rgba(25, 146, 226, 0.7);
+    border-top: 4px solid orange;
+    border-bottom: 4px solid orange;
+    padding: 1rem 0;
+    margin: 0 1.5rem;
+}
+
+.side2-text h3:hover {
+    cursor: grab;
+    color: white;
+    background-color: rgba(25, 146, 226, 0.7); 
+    border-top: 0.4rem solid rgba(25, 146, 226, 0.7);
+    border-bottom: 0.4rem solid rgba(25, 146, 226, 0.7);
+    transition: 1s;
+}
+
+/*sidebar 3 */
+
+#side3-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side3 img {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.side3-text h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+    padding: 0 1rem;
+    color: rgba(25, 146, 226, 0.7);
+    border-top: 4px solid orange;
+    border-bottom: 4px solid orange;
+    padding: 1rem 0;
+    margin: 0 1.5rem;
+}
+
+.side3-text h3:hover {
+        cursor: grab;
+        color: white;
+        background-color: rgba(25, 146, 226, 0.7); 
+        border-top: 0.4rem solid rgba(25, 146, 226, 0.7);
+        border-bottom: 0.4rem solid rgba(25, 146, 226, 0.7);
+        transition: 1s;
+}
+
+/*registration form*/
+
+.reg {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 1rem;
+}
+
+label {
+    width: 10rem;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+label textarea{
+    vertical-align: middle;
+}
+
+.submission {
+    text-align: right;
+}
+
+.title-under h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    color: rgb(37, 81, 148);
+    padding: 0 1rem 0.7rem 1rem;
+
+}
+
+.reg-text h4 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgb(37, 81, 148);
+    padding: 0 1rem 0.7rem 1rem;
+}
+
+.name, .surname, .email, .extra-info {
+    font-family: 'Montserrat', sans-serif;
+    color: darkorange;
+    font-weight: 600;
+}
+
+input {
+    border: 0.1rem solid rgba(25, 146, 226, 0.7);
+}
+
+textarea {
+    border: 0.1rem solid rgba(25, 146, 226, 0.7);
+}
+
+/*footer*/
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    background-color: rgba(178, 186, 192, 0.7); 
+}
+
+.ball {
+    width: 5%;
+    height: auto;
+}
+
+footer .copyright-link {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(37, 81, 148);
+    text-decoration: none;
+}
+
+.copyright-link:hover {
+    font-weight: 600;
+}
+
+.copyright, .phone h5 {
+    font-family: 'Montserrat', sans-serif;
+   line-height: 1.5rem;;
+    color: rgb(37, 81, 148);
+}
+
+.terms li a {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5rem;
+    color: rgb(37, 81, 148);
+}
+
+.terms ul li a:hover {
+    font-weight: 600;  
+}
+
+/*media*/
+
+@media only screen and (max-width: 890px) {
+    body {
+        width: 99%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-areas: "head"
+                            "head1"
+                             "cont1"
+                             "cont2"
+                             "side1"
+                             "side2"
+                             "side3"
+                             "reg"
+                             "foot";
+        gap: 0.5rem;     
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .ball {
+        padding-top: 1rem;
+        width: 7%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .ball {
+        padding-top: 1rem;
+        width: 10%;
+    }
+}
